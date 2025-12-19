@@ -1,0 +1,79 @@
+2025-03-02 13:33:26,055 INFO    MainThread:33165 [wandb_setup.py:_flush():79] Current SDK version is 0.18.6
+2025-03-02 13:33:26,055 INFO    MainThread:33165 [wandb_setup.py:_flush():79] Configure stats pid to 33165
+2025-03-02 13:33:26,056 INFO    MainThread:33165 [wandb_setup.py:_flush():79] Loading settings from /home/lzy1211/.config/wandb/settings
+2025-03-02 13:33:26,056 INFO    MainThread:33165 [wandb_setup.py:_flush():79] Loading settings from /data/lzy1211/code/A2II/instructBLIP/A2II/wandb/settings
+2025-03-02 13:33:26,056 INFO    MainThread:33165 [wandb_setup.py:_flush():79] Loading settings from environment variables: {'project': 'A2II-sweep'}
+2025-03-02 13:33:26,056 INFO    MainThread:33165 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': 'train.py', 'program_abspath': '/data/lzy1211/code/A2II/instructBLIP/A2II/train.py', 'program': 'train.py'}
+2025-03-02 13:33:26,056 INFO    MainThread:33165 [wandb_setup.py:_flush():79] Applying login settings: {}
+2025-03-02 13:33:26,056 INFO    MainThread:33165 [wandb_setup.py:_flush():79] Applying login settings: {}
+2025-03-02 13:33:26,056 INFO    MainThread:33165 [wandb_init.py:_log_setup():533] Logging user logs to /data/lzy1211/code/A2II/instructBLIP/A2II/wandb/run-20250302_133326-l73gf2ut/logs/debug.log
+2025-03-02 13:33:26,056 INFO    MainThread:33165 [wandb_init.py:_log_setup():534] Logging internal logs to /data/lzy1211/code/A2II/instructBLIP/A2II/wandb/run-20250302_133326-l73gf2ut/logs/debug-internal.log
+2025-03-02 13:33:26,057 INFO    MainThread:33165 [wandb_init.py:init():619] calling init triggers
+2025-03-02 13:33:26,057 INFO    MainThread:33165 [wandb_init.py:init():626] wandb.init called with sweep_config: {}
+config: {'dataset': 'twitter2015', 'data_dir': '/data/lzy1211/code/A2II/instructBLIP/img_data', 'img_feat_dir': '/data/lzy1211/code/A2II/instructBLIP/img_data', 'output_dir': '/data/lzy1211/code/A2II/instructBLIP/results/twitter2015-sweep/', 'gradient_accumulation_steps': 4, 'BATCH_SIZE': 8, 'seed': 42, 'EPOCHS': 1, 'LEARNING_RATE': 5e-05, 'warmup_proportion': 0.1, 'max_seq_length': 150, 'run_name': 'pytorch_model', 'output_model_name': 'pytorch_model', 'output_log_name': 'log'}
+2025-03-02 13:33:26,057 INFO    MainThread:33165 [wandb_init.py:init():669] starting backend
+2025-03-02 13:33:26,057 INFO    MainThread:33165 [wandb_init.py:init():673] sending inform_init request
+2025-03-02 13:33:26,061 INFO    MainThread:33165 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-03-02 13:33:26,063 INFO    MainThread:33165 [wandb_init.py:init():686] backend started and connected
+2025-03-02 13:33:26,075 INFO    MainThread:33165 [wandb_init.py:init():781] updated telemetry
+2025-03-02 13:33:26,077 INFO    MainThread:33165 [wandb_init.py:init():814] communicating run to backend with 90.0 second timeout
+2025-03-02 13:33:27,997 INFO    MainThread:33165 [wandb_init.py:init():867] starting run threads in backend
+2025-03-02 13:33:28,607 INFO    MainThread:33165 [wandb_run.py:_console_start():2451] atexit reg
+2025-03-02 13:33:28,608 INFO    MainThread:33165 [wandb_run.py:_redirect():2299] redirect: wrap_raw
+2025-03-02 13:33:28,609 INFO    MainThread:33165 [wandb_run.py:_redirect():2364] Wrapping output streams.
+2025-03-02 13:33:28,609 INFO    MainThread:33165 [wandb_run.py:_redirect():2389] Redirects installed.
+2025-03-02 13:33:28,615 INFO    MainThread:33165 [wandb_init.py:init():911] run started, returning control to user process
+2025-03-02 13:36:50,460 INFO    MainThread:33165 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/urllib3/connectionpool.py", line 713, in urlopen
+    self._prepare_proxy(conn)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1015, in _prepare_proxy
+    conn.connect()
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/urllib3/connection.py", line 419, in connect
+    self.sock = ssl_wrap_socket(
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 458, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 502, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/urllib3/connectionpool.py", line 802, in urlopen
+    retries = retries.increment(
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/urllib3/util/retry.py", line 594, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(104, 'Connection reset by peer')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 400, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/requests/adapters.py", line 694, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(104, 'Connection reset by peer')))
+2025-03-02 13:37:05,708 WARNING MsgRouterThr:33165 [router.py:message_loop():75] message_loop has been closed

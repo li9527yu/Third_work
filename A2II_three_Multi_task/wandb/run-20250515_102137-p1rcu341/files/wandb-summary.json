@@ -1,0 +1,1 @@
+{"_runtime":723.7900097,"Test_senti_precision":0.7033362051656183,"test_macro_f1":0.7147308272827747,"test_acc":0.7531340405014465,"Test_senti_recall":0.7305706430569314,"_step":30,"_timestamp":1.7472764233706493e+09,"train_loss":0.009409904081243366,"val_acc":0.7308377896613191,"_wandb":{"runtime":723}}

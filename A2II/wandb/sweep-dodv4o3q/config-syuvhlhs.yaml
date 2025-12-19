@@ -1,0 +1,8 @@
+wandb_version: 1
+
+BATCH_SIZE:
+  value: 8
+EPOCHS:
+  value: 1
+LEARNING_RATE:
+  value: 2.0e-05

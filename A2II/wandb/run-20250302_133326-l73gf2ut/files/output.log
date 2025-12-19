@@ -1,0 +1,150 @@
+You are using the default legacy behaviour of the <class 'transformers.models.t5.tokenization_t5.T5Tokenizer'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
+CreatExample: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3179/3179 [00:00<00:00, 113697.89it/s]
+CreatExample: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1122/1122 [00:00<00:00, 246504.06it/s]
+CreatExample: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1037/1037 [00:00<00:00, 243860.35it/s]
+Epoch:   0%|                                                                                                                                                                                           | 0/1 [00:00<?, ?it/s]/data/lzy1211/code/A2II/instructBLIP/A2II/DataProcessor.py:57: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  input_hidden_states = torch.tensor(input_hidden_states).to(input_re_ids.device)  # 确保在同一个设备上                                                                                                       | 0/398 [00:00<?, ?it/s]
+/data/lzy1211/code/A2II/instructBLIP/A2II/DataProcessor.py:58: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  input_pooler_outputs = torch.tensor(input_pooler_outputs).to(input_re_ids.device)  # 确保在同一个设备上
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 398/398 [02:18<00:00,  2.88it/s]
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 141/141 [00:23<00:00,  6.03it/s]
+Epoch: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [02:46<00:00, 166.68s/it]
+Testing: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 130/130 [00:20<00:00,  6.41it/s]
+[34m[1mwandb[0m: [33mWARNING[0m Calling wandb.login() after wandb.init() has no effect.
+[34m[1mwandb[0m: Network error (ProxyError), entering retry loop.
+Traceback (most recent call last):
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/debugpy/__main__.py", line 39, in <module>
+    cli.main()
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/debugpy/server/cli.py", line 430, in main
+    run()
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/debugpy/server/cli.py", line 284, in run_file
+    runpy.run_path(target, run_name="__main__")
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 321, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 135, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 124, in _run_code
+    exec(code, run_globals)
+  File "train.py", line 332, in <module>
+    wandb.agent(sweep_id, function=main(args), count=10)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/wandb_agent.py", line 572, in agent
+    return run_agent(
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/wandb_agent.py", line 531, in run_agent
+    agent.run()
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/wandb_agent.py", line 193, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/apis/internal.py", line 130, in sweep
+    return self.api.sweep(*args, **kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 1120, in sweep
+    response = self.gql(
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 372, in gql
+    ret = self._retry_gql(
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 400, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/urllib3/connectionpool.py", line 713, in urlopen
+    self._prepare_proxy(conn)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1015, in _prepare_proxy
+    conn.connect()
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/urllib3/connection.py", line 419, in connect
+    self.sock = ssl_wrap_socket(
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 458, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 502, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/debugpy/__main__.py", line 39, in <module>
+    cli.main()
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/debugpy/server/cli.py", line 430, in main
+    run()
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/debugpy/server/cli.py", line 284, in run_file
+    runpy.run_path(target, run_name="__main__")
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 321, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 135, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 124, in _run_code
+    exec(code, run_globals)
+  File "train.py", line 332, in <module>
+    wandb.agent(sweep_id, function=main(args), count=10)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/wandb_agent.py", line 572, in agent
+    return run_agent(
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/wandb_agent.py", line 531, in run_agent
+    agent.run()
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/wandb_agent.py", line 193, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/apis/internal.py", line 130, in sweep
+    return self.api.sweep(*args, **kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 1120, in sweep
+    response = self.gql(
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 372, in gql
+    ret = self._retry_gql(
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 400, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/urllib3/connectionpool.py", line 713, in urlopen
+    self._prepare_proxy(conn)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1015, in _prepare_proxy
+    conn.connect()
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/urllib3/connection.py", line 419, in connect
+    self.sock = ssl_wrap_socket(
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 458, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 502, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "/data/lzy1211/anaconda/envs/mvp/lib/python3.8/ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+KeyboardInterrupt

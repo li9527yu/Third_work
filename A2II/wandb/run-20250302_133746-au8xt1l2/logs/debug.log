@@ -1,0 +1,69 @@
+2025-03-02 13:37:46,745 INFO    MainThread:36744 [wandb_setup.py:_flush():79] Current SDK version is 0.18.6
+2025-03-02 13:37:46,746 INFO    MainThread:36744 [wandb_setup.py:_flush():79] Configure stats pid to 36744
+2025-03-02 13:37:46,746 INFO    MainThread:36744 [wandb_setup.py:_flush():79] Loading settings from /home/lzy1211/.config/wandb/settings
+2025-03-02 13:37:46,746 INFO    MainThread:36744 [wandb_setup.py:_flush():79] Loading settings from /data/lzy1211/code/A2II/instructBLIP/A2II/wandb/settings
+2025-03-02 13:37:46,747 INFO    MainThread:36744 [wandb_setup.py:_flush():79] Loading settings from environment variables: {'project': 'A2II-sweep'}
+2025-03-02 13:37:46,747 INFO    MainThread:36744 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': 'train.py', 'program_abspath': '/data/lzy1211/code/A2II/instructBLIP/A2II/train.py', 'program': 'train.py'}
+2025-03-02 13:37:46,747 INFO    MainThread:36744 [wandb_setup.py:_flush():79] Applying login settings: {}
+2025-03-02 13:37:46,747 INFO    MainThread:36744 [wandb_setup.py:_flush():79] Applying login settings: {}
+2025-03-02 13:37:46,748 INFO    MainThread:36744 [wandb_setup.py:_flush():79] Applying login settings: {}
+2025-03-02 13:37:46,748 INFO    MainThread:36744 [wandb_init.py:_log_setup():533] Logging user logs to /data/lzy1211/code/A2II/instructBLIP/A2II/wandb/run-20250302_133746-au8xt1l2/logs/debug.log
+2025-03-02 13:37:46,748 INFO    MainThread:36744 [wandb_init.py:_log_setup():534] Logging internal logs to /data/lzy1211/code/A2II/instructBLIP/A2II/wandb/run-20250302_133746-au8xt1l2/logs/debug-internal.log
+2025-03-02 13:37:46,748 INFO    MainThread:36744 [wandb_init.py:init():619] calling init triggers
+2025-03-02 13:37:46,749 INFO    MainThread:36744 [wandb_init.py:init():626] wandb.init called with sweep_config: {}
+config: {'dataset': 'twitter2015', 'data_dir': '/data/lzy1211/code/A2II/instructBLIP/img_data', 'img_feat_dir': '/data/lzy1211/code/A2II/instructBLIP/img_data', 'output_dir': '/data/lzy1211/code/A2II/instructBLIP/results/twitter2015-sweep/', 'gradient_accumulation_steps': 4, 'BATCH_SIZE': 8, 'seed': 42, 'EPOCHS': 1, 'LEARNING_RATE': 5e-05, 'warmup_proportion': 0.1, 'max_seq_length': 150, 'run_name': 'pytorch_model', 'output_model_name': 'pytorch_model', 'output_log_name': 'log'}
+2025-03-02 13:37:46,749 INFO    MainThread:36744 [wandb_init.py:init():669] starting backend
+2025-03-02 13:37:46,749 INFO    MainThread:36744 [wandb_init.py:init():673] sending inform_init request
+2025-03-02 13:37:46,751 INFO    MainThread:36744 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-03-02 13:37:46,759 INFO    MainThread:36744 [wandb_init.py:init():686] backend started and connected
+2025-03-02 13:37:46,765 INFO    MainThread:36744 [wandb_init.py:init():781] updated telemetry
+2025-03-02 13:37:46,766 INFO    MainThread:36744 [wandb_init.py:init():814] communicating run to backend with 90.0 second timeout
+2025-03-02 13:37:48,630 INFO    MainThread:36744 [wandb_init.py:init():867] starting run threads in backend
+2025-03-02 13:37:48,830 INFO    MainThread:36744 [wandb_run.py:_console_start():2451] atexit reg
+2025-03-02 13:37:48,830 INFO    MainThread:36744 [wandb_run.py:_redirect():2299] redirect: wrap_raw
+2025-03-02 13:37:48,831 INFO    MainThread:36744 [wandb_run.py:_redirect():2364] Wrapping output streams.
+2025-03-02 13:37:48,831 INFO    MainThread:36744 [wandb_run.py:_redirect():2389] Redirects installed.
+2025-03-02 13:37:48,836 INFO    MainThread:36744 [wandb_init.py:init():911] run started, returning control to user process
+2025-03-02 13:40:55,427 INFO    MainThread:36744 [wandb_agent.py:run():220] Running runs: []
+2025-03-02 13:40:55,897 INFO    MainThread:36744 [wandb_agent.py:_process_command():316] Agent received command: run
+2025-03-02 13:40:55,898 INFO    MainThread:36744 [wandb_agent.py:_command_run():349] Agent starting run with config:
+	BATCH_SIZE: 8
+	EPOCHS: 1
+	LEARNING_RATE: 1e-06
+2025-03-02 13:40:55,901 INFO    MainThread:36744 [wandb_agent.py:_command_run():421] About to run command: /usr/bin/env python  --BATCH_SIZE=8 --EPOCHS=1 --LEARNING_RATE=1e-06
+2025-03-02 13:41:01,120 INFO    MainThread:36744 [wandb_agent.py:run():220] Running runs: ['skscr5g2']
+2025-03-02 13:41:01,122 INFO    MainThread:36744 [wandb_agent.py:run():255] Cleaning up finished run: skscr5g2
+2025-03-02 13:41:01,161 WARNING MsgRouterThr:36744 [router.py:message_loop():75] message_loop has been closed
+2025-03-02 13:41:04,496 INFO    MainThread:36744 [wandb_agent.py:_process_command():316] Agent received command: run
+2025-03-02 13:41:04,497 INFO    MainThread:36744 [wandb_agent.py:_command_run():349] Agent starting run with config:
+	BATCH_SIZE: 8
+	EPOCHS: 1
+	LEARNING_RATE: 1e-05
+2025-03-02 13:41:04,500 INFO    MainThread:36744 [wandb_agent.py:_command_run():421] About to run command: /usr/bin/env python  --BATCH_SIZE=8 --EPOCHS=1 --LEARNING_RATE=1e-05
+2025-03-02 13:41:09,634 INFO    MainThread:36744 [wandb_agent.py:run():220] Running runs: ['eoy8duy0']
+2025-03-02 13:41:09,636 INFO    MainThread:36744 [wandb_agent.py:run():255] Cleaning up finished run: eoy8duy0
+2025-03-02 13:41:10,161 INFO    MainThread:36744 [wandb_agent.py:_process_command():316] Agent received command: run
+2025-03-02 13:41:10,162 INFO    MainThread:36744 [wandb_agent.py:_command_run():349] Agent starting run with config:
+	BATCH_SIZE: 8
+	EPOCHS: 1
+	LEARNING_RATE: 2e-05
+2025-03-02 13:41:10,165 INFO    MainThread:36744 [wandb_agent.py:_command_run():421] About to run command: /usr/bin/env python  --BATCH_SIZE=8 --EPOCHS=1 --LEARNING_RATE=2e-05
+2025-03-02 13:41:15,331 INFO    MainThread:36744 [wandb_agent.py:run():220] Running runs: ['syuvhlhs']
+2025-03-02 13:41:15,334 INFO    MainThread:36744 [wandb_agent.py:run():255] Cleaning up finished run: syuvhlhs
+2025-03-02 13:41:15,803 INFO    MainThread:36744 [wandb_agent.py:_process_command():316] Agent received command: run
+2025-03-02 13:41:15,804 INFO    MainThread:36744 [wandb_agent.py:_command_run():349] Agent starting run with config:
+	BATCH_SIZE: 8
+	EPOCHS: 2
+	LEARNING_RATE: 1e-06
+2025-03-02 13:41:15,807 INFO    MainThread:36744 [wandb_agent.py:_command_run():421] About to run command: /usr/bin/env python  --BATCH_SIZE=8 --EPOCHS=2 --LEARNING_RATE=1e-06
+2025-03-02 13:41:20,961 INFO    MainThread:36744 [wandb_agent.py:run():220] Running runs: ['wznazcg2']
+2025-03-02 13:41:20,963 INFO    MainThread:36744 [wandb_agent.py:run():255] Cleaning up finished run: wznazcg2
+2025-03-02 13:41:21,503 INFO    MainThread:36744 [wandb_agent.py:_process_command():316] Agent received command: run
+2025-03-02 13:41:21,504 INFO    MainThread:36744 [wandb_agent.py:_command_run():349] Agent starting run with config:
+	BATCH_SIZE: 8
+	EPOCHS: 2
+	LEARNING_RATE: 1e-05
+2025-03-02 13:41:21,507 INFO    MainThread:36744 [wandb_agent.py:_command_run():421] About to run command: /usr/bin/env python  --BATCH_SIZE=8 --EPOCHS=2 --LEARNING_RATE=1e-05
+2025-03-02 13:41:26,686 INFO    MainThread:36744 [wandb_agent.py:run():220] Running runs: ['0qnj9osu']
+2025-03-02 13:41:26,687 ERROR   MainThread:36744 [wandb_agent.py:run():246] Detected 5 failed runs in a row, shutting down.
+2025-03-02 13:41:26,688 INFO    MainThread:36744 [wandb_agent.py:run():250] To change this value set WANDB_AGENT_MAX_INITIAL_FAILURES=val
