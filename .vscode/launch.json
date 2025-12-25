@@ -14,8 +14,8 @@
             },
             "pathMappings": [
                 {
-                    "localRoot": "/data/lzy1211/code/pretrain/A2II_three_Multi_task",
-                    "remoteRoot": "/data/lzy1211/code/pretrain/A2II_three_Multi_task",
+                    "localRoot": "/data/lzy1211/code/pretrain/A2II_three_emotion",
+                    "remoteRoot": "/data/lzy1211/code/pretrain/A2II_three_emotion",
                 }
             ],
             "justMyCode": true
