@@ -1,24 +1,23 @@
-export CUDA_VISIBLE_DEVICES=6
+export CUDA_VISIBLE_DEVICES=7
 # debug: -m debugpy --connect 127.0.0.1:2233
-# 12-17: 多任务: 文本情感预测，图像情感预测多任务113116
+# 12-14: 多任务: 将双路中的文本分支，转变为文本情感预测任务，考虑预测目标是LLM生成的，需要控制loss的比例
+# 12-22:修改线性层为MLP
 
-# 以max_f1为验证集指标
-
-# 12-28：多任务：图像+文本多任务：调整输入和MLP，generate
-for dataset in "twitter2015"  "twitter2017" 
+#12-28：  1. 在文本情感预测多任务上+加入多层次相关性建模（先加入训练，后面再加入相关性控制）
+for dataset in "twitter2015"  "twitter2017"   
 do
     for seed in "24"
     do
     echo ${dataset}
     echo ${seed}
-    python  train.py \
+    python train.py \
     --dataset ${dataset} \
     --data_dir /data/lzy1211/code/pretrain/data/emotion_gemini \
     --img_feat_dir /data/lzy1211/code/A2II/instructBLIP/img_data \
-    --output_dir /data/lzy1211/code/pretrain/outputs/mutltiTask_text_image_V2/${dataset}/${seed} \
+    --output_dir /data/lzy1211/code/pretrain/outputs/mutltiTask_textSenti_multilayer_relation_V2/${dataset}/${seed} \
     --BATCH_SIZE 16 \
     --seed ${seed} \
-    --EPOCHS 30 \
+    --EPOCHS 20 \
     --LEARNING_RATE 5e-5 \
     --weight 0.5
     done

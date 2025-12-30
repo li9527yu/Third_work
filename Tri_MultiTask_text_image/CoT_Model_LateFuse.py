@@ -14,15 +14,31 @@ class MyFlanT5(nn.Module):
         self.tokenizer=tokenizer
         # 在输入部分添加 MLP 层
         # 图像特征的映射
-        self.imagetext_projection = nn.Linear(768, 768)
-
+        # self.imagetext_projection = nn.Linear(768, 768)
+        self.imagetext_projection = nn.Sequential(
+            nn.Linear(768, 768),
+            nn.GELU(),
+            nn.Linear(768, 768)
+        )
         self.loss_fct = nn.CrossEntropyLoss(ignore_index=-100)
         self.init_linear_weight()
 
+    def _init_weights(self, module):
+        """
+        通用的权重初始化函数，用于 apply
+        """
+        if isinstance(module, nn.Linear):
+            nn.init.normal_(module.weight, mean=0.0, std=0.02)
+            if module.bias is not None:
+                nn.init.zeros_(module.bias)
+        elif isinstance(module, nn.LayerNorm):
+            module.bias.data.zero_()
+            module.weight.data.fill_(1.0)
+
     def init_linear_weight(self):
-        # # 初始化
-        nn.init.normal_(self.imagetext_projection.weight, mean=0.0, std=0.02)
-        nn.init.zeros_(self.imagetext_projection.bias)
+        # 1. 初始化 imagetext_projection
+        # apply 会自动递归处理，不管它是 Linear 还是 Sequential 都能用
+        self.imagetext_projection.apply(self._init_weights)
 
 
  

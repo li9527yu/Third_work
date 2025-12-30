@@ -34,9 +34,6 @@ class MyDataset(Data.Dataset):
             "QA: Combining information from the image and the sentence, "
             "identify the sentiment of the given aspect."
         )
-
-        # self.instruction_imgemo = "QA: Describe the image sentiment and the reason."
-
     def __len__(self):
         return self.number
     def __getitem__(self,index):
@@ -79,7 +76,7 @@ class MyDataset(Data.Dataset):
         text_sentiment = value['textual_clues_parsed']['polarity']
         
         relation_s=1
-        
+        relation_semantic,realtion_sentiment=get_rel(value['relation'])
 
         inputs_text = (
             f"{self.instruction_text} "
@@ -107,6 +104,7 @@ class MyDataset(Data.Dataset):
             f"OPTIONS: -positive -neutral -negative "
             f"OUTPUT:"
         )
+
         model_inputs_image = self.tokenizer(
             inputs_image,
             padding="max_length",
@@ -118,22 +116,7 @@ class MyDataset(Data.Dataset):
         input_ids_image = model_inputs_image["input_ids"].squeeze(0)
         attention_mask_image = model_inputs_image["attention_mask"].squeeze(0)
 
-
-        inputs_imgemo = (
-            f"QA: Describe the image sentiment and the reason. "
-            f"Aspect: {aspect} "
-            f"OUTPUT:"
-        )
-        model_inputs_imgemo = self.tokenizer(
-            inputs_imgemo,
-            padding='max_length',
-            truncation=True,
-            max_length=self.max_seq_len,   # 可与主任务同长；也可单独设更短
-            return_tensors="pt"
-        )
-        input_imgemo_ids = model_inputs_imgemo["input_ids"].squeeze(0)
-        input_imgemo_attention_mask = model_inputs_imgemo["attention_mask"].squeeze(0)
-
+      
         # 处理标签
         labels_text = self.tokenizer(
             text_sentiment,
@@ -144,17 +127,6 @@ class MyDataset(Data.Dataset):
         )["input_ids"].squeeze(0)
 
         labels_text[labels_text == self.tokenizer.pad_token_id] = -100
-
-        max_imgemo_len = 128
-        model_inputs_imgemo_labels = self.tokenizer(
-            image_emotion,                 # 监督目标（解释文本）
-            padding='max_length',
-            truncation=True,
-            max_length=max_imgemo_len,
-            return_tensors="pt"
-        )
-        model_inputs_imgemo_labels["input_ids"][model_inputs_imgemo_labels["input_ids"] == self.tokenizer.pad_token_id] = -100
-        imgemo_labels = model_inputs_imgemo_labels["input_ids"].squeeze(0)
 
         # —— 主任务标签（multimodal）
         labels_mm = self.tokenizer(
@@ -167,9 +139,9 @@ class MyDataset(Data.Dataset):
 
         labels_mm[labels_mm == self.tokenizer.pad_token_id] = -100
 
- 
-        return input_ids_text,input_ids_image,input_imgemo_ids,attention_mask_text,\
-            attention_mask_image,input_imgemo_attention_mask,input_hidden_states,input_pooler_outputs,labels_text,labels_mm,imgemo_labels,output_labels,relation_s
+        return input_ids_text,input_ids_image,attention_mask_text,\
+            attention_mask_image,input_hidden_states,input_pooler_outputs,\
+                labels_text,labels_mm,output_labels,relation_semantic,realtion_sentiment
 
 
  
